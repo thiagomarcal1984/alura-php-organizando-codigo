@@ -23,3 +23,17 @@ function incluidoNoPlano($planoPrime, $anoLancamento) {
 // Resto do código
 $incluidoNoPlano = incluidoNoPlano($planoPrime, $anoLancamento);
 ```
+## Adicionando tipos
+Tipagem nas funções e nos seus retornos dá mais robustez ao código: previne erros pelo desenvolvedor e facilita a compreensão do seu retorno.
+```PHP
+function exibeMensagemLancamento (int $ano): void {
+    // Resto do código
+}
+
+function incluidoNoPlano(bool $planoPrime, int $anoLancamento): bool {
+    // Resto do código
+}
+```
+> Nos parâmetros, o tipo é colocado antes do nome da variável. 
+> 
+> Nos retornos, usamos `): tipo {` entre o final do parênteses dos parâmetros e o início do bloco de código com chaves.
