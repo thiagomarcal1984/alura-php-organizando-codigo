@@ -14,3 +14,12 @@ function exibeMensagemLancamento ($ano) {
 // Resto do código
 exibeMensagemLancamento(1990);
 ```
+## Funções e retorno
+Funções podem retornar valores.
+```PHP
+function incluidoNoPlano($planoPrime, $anoLancamento) {
+    return $planoPrime || $anoLancamento < 2020;
+}
+// Resto do código
+$incluidoNoPlano = incluidoNoPlano($planoPrime, $anoLancamento);
+```
