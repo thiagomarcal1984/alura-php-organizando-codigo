@@ -193,3 +193,12 @@ Duas mudanças:
 > ```PHP
 > require __DIR__ . "/src/funcoes.php";
 > ```
+# PHP na web
+## Servidores web
+Arquitetura cliente/servidor, onde o servidor tem o PHP, o HTML e o banco de dados.
+
+Como subir um servidor no PHP:
+```bash
+php -S localhost:80 -t public
+```
+> O parâmetro `-t` significa `target`. No caso, a pasta `public` será disponibilizada pelo servidor.
