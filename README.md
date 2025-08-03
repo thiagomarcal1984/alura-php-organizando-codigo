@@ -78,3 +78,20 @@ var_dump(substr( //SUBSTRing
 ));
 ```
 > Outras funções que operam sobre string estão documentadas em https://www.php.net/manual/en/ref.strings.php .
+
+
+## Para saber mais: mbstring
+Há uma especificidade do PHP que é o fato de ele sempre assumir em suas funções que cada caractere de uma string ocupa especificamente 1 byte. O que isso quer dizer? Lidar com strings que têm caracteres com acento pode nos trazer algumas dores de cabeça. Para isso, existem funções fornecidas por uma extensão do PHP chamada mbstring.
+
+Para entender melhor sobre como usar a extensão mbstring, você pode conferir o seguinte curso:
+
+[Expressões Regulares: faça buscas, validações e substituições de textos](https://cursos.alura.com.br/course/expressoes-regulares-buscas-validacoes-substituicoes-textos)
+
+Além de ler o um [post sobre mbstring](https://dias.dev/2023-03-21-strings-multibyte-php-mbstring/) e também pode conferir um [texto sobre extensões do PHP](https://dias.dev/2022-02-13-extensoes-php/).
+
+> Segundo o Vinicius Dias: _A maioria das funções "padrão" de strings do PHP possui uma contraparte na `mbstring`, sendo apenas prefixada com `mb_`. O exemplo de código anteriormente exposto que nos gerava o resultado inesperado poderia ser escrito da seguinte forma:_
+> ```php
+> <?php
+> echo mb_strlen('Olá'); // Exibe 3
+> echo mb_strtoupper('olá'); // Exibe "OLÁ"
+> ```
