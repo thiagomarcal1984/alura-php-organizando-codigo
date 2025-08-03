@@ -47,3 +47,7 @@ echo $filme["ano"];
 
 $filmeComoStringJson = json_encode($filme);
 file_put_contents(__DIR__ . '/filme.json', $filmeComoStringJson);
+
+$filme = json_decode(file_get_contents(__DIR__ . '/filme.json'), true);
+var_dump($filme);
+unlink(__DIR__ . '/filme.json'); // Remove o JSON.

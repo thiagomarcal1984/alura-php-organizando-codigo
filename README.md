@@ -147,3 +147,10 @@ Vamos usar a função `file_put_contents` para gravar o JSON:
 $filmeComoStringJson = json_encode($filme);
 file_put_contents(__DIR__ . '/filme.json', $filmeComoStringJson);
 ```
+## Importando dados
+Vamos usar a função `file_get_contents` para ler o JSON:
+```PHP
+$filme = json_decode(file_get_contents(__DIR__ . '/filme.json'), true);
+var_dump($filme);
+unlink(__DIR__ . '/filme.json'); // Remove o JSON.
+```
