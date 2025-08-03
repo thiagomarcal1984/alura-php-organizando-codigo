@@ -154,3 +154,33 @@ $filme = json_decode(file_get_contents(__DIR__ . '/filme.json'), true);
 var_dump($filme);
 unlink(__DIR__ . '/filme.json'); // Remove o JSON.
 ```
+# Organizando o ScreenMatch
+## Definição explícita dos dados
+Vamos criar uma função para construir um array associativo com todos os valores necessários aos filmes: 
+
+```PHP
+// funcoes.php
+// Resto do código
+function criaFilme(string $nome, int $ano, float $nota, string $genero): array {
+    return [
+        "nome" => $nome,
+        "ano" => $ano,
+        "nota" => $nota,
+        "genero" => $genero,
+    ];
+}
+```
+
+É possível mudar a ordem de inserção dos parâmetros, **desde que** você prefixe cada parâmetro com o nome do parâmetro exigido pela função:
+```PHP
+// screen-match.php
+// Resto do código
+$filme = criaFilme(
+    ano: 2021,
+    nome: "Thor: Ragnarok",
+    genero: "super-herói",
+    nota: 7.8,
+);
+// Resto do código
+```
+> Note que na definição da função, o primeiro parâmetro é a string `$nome`, mas na invocação da função o primeiro parâmetro foi o nomeado `ano: 2021`.
