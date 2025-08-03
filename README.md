@@ -125,3 +125,19 @@ exibeMensagemLancamento($anoLancamento);
 ```
 > 1. Os **dunder methods/magic methods** do PHP são envolvidos por double underscores (dunders). O método mágico `__DIR__` fornece o caminho absoluto do arquivo. 
 > 2. Ao importar algum arquivo com `require`/`require_once`, use o dunder method `__DIR__` para que não haja confusão com o import.
+
+# Manipulando arquivos
+## Definindo um formato
+Podemos criar conteúdo JSON com as funções `json_encode` e `json_decode`:
+
+```PHP
+var_dump(json_encode($filme)); // Transforma o array em um JSON.
+
+var_dump(json_decode(
+    '{"nome":"Thor: Ragnarok",
+    "ano":2021,
+    "nota":7.8,
+    "genero":"super-her\u00f3i"}', // Transforma o JSON em um objeto.
+    true // Se verdadeiro, transforma o JSON em um array associativo.
+));
+```
