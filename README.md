@@ -141,3 +141,9 @@ var_dump(json_decode(
     true // Se verdadeiro, transforma o JSON em um array associativo.
 ));
 ```
+## Exportando um filme
+Vamos usar a função `file_put_contents` para gravar o JSON:
+```PHP
+$filmeComoStringJson = json_encode($filme);
+file_put_contents(__DIR__ . '/filme.json', $filmeComoStringJson);
+```
