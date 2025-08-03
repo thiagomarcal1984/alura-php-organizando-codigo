@@ -202,3 +202,19 @@ Como subir um servidor no PHP:
 php -S localhost:80 -t public
 ```
 > O parâmetro `-t` significa `target`. No caso, a pasta `public` será disponibilizada pelo servidor.
+
+## Recebendo dados do PHP
+Vamos usar o array `$_POST` para coletar conteúdo da requisição enviada pelo arquivo `public/index.php`. A requisição POST será gerada pelo arquivo `public/exporta-arquivo.php`:
+```PHP
+// public/exporta-arquiv.php
+<?php
+
+$filme = [
+    'nome' => $_POST['nome'],
+    'ano' => $_POST['ano'],
+    'nota' => $_POST['nota'],
+    'genero' => $_POST['genero'],
+];
+
+file_put_contents('filmes.json', json_encode($filme));
+```
