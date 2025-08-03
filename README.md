@@ -184,3 +184,12 @@ $filme = criaFilme(
 // Resto do código
 ```
 > Note que na definição da função, o primeiro parâmetro é a string `$nome`, mas na invocação da função o primeiro parâmetro foi o nomeado `ano: 2021`.
+
+## Melhorando a estrutura
+Duas mudanças: 
+1. moveremos o arquivo `funcoes.php` para o diretório `src` (já que este diretório **não** estará disponível publicamente); e
+2. mudaremos o nome do arquivo `screen-match.php` para `index.php` (que estará disponível publicamente).
+> Ao mover o arquivo `funcoes.php` para `src`, é necessário atualizar os imports no arquivo `index.php`:
+> ```PHP
+> require __DIR__ . "/src/funcoes.php";
+> ```
