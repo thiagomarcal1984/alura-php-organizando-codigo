@@ -51,3 +51,30 @@ Algumas funções que operam sobre arrays:
 > }
 > ```
 > Outras funções de operação sobre arrays estão disponíveis em https://www.php.net/manual/en/ref.array.php.
+
+## Operando com textos
+Vamos falar das funções `substr` e `strpos`:
+
+```PHP
+$filme = [
+    "nome" => "Thor: Ragnarok",
+    "ano" => 2021,
+    "nota" => 7.8,
+    "genero" => "super-herói",
+];
+
+
+// Retorna 4, que seria a quinta posição onde está os dois pontos.
+$posicaoDoisPontos = strpos( // STRing POSition.
+    $filme["nome"], // string onde será feita a pesquisa;
+    ":" // string procurada para retornar a posição.
+);
+
+// Retorna "Thor". 
+var_dump(substr( //SUBSTRing
+    $filme["nome"], // string de onde será tirada a substring;
+    0, // inteiro que representa a posição inicial;
+    $posicaoDoisPontos // inteiro que representa a posição ifnal.
+));
+```
+> Outras funções que operam sobre string estão documentadas em https://www.php.net/manual/en/ref.strings.php .
