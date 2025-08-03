@@ -95,3 +95,33 @@ Além de ler o um [post sobre mbstring](https://dias.dev/2023-03-21-strings-mult
 > echo mb_strlen('Olá'); // Exibe 3
 > echo mb_strtoupper('olá'); // Exibe "OLÁ"
 > ```
+
+## Separando em arquivos
+Vamos criar dois arquivos no diretório `screen-match`:
+1. `funcoes.php` vai ter o código das funções que serão importadas;
+2. `screen-match.php` vai ter o código principal.
+
+```PHP
+// funcoes.php
+<?php
+function exibeMensagemLancamento (int $ano): void {
+    // Resto do código
+}
+
+function incluidoNoPlano(bool $planoPrime, int $anoLancamento): bool {
+    // Resto do código
+}
+```
+
+```PHP
+// screen-match.php
+<?php
+require __DIR__ . "/funcoes.php";
+// Resto do código
+$incluidoNoPlano = incluidoNoPlano($planoPrime, $anoLancamento);
+// Resto do código
+exibeMensagemLancamento($anoLancamento);
+// Resto do código
+```
+> 1. Os **dunder methods/magic methods** do PHP são envolvidos por double underscores (dunders). O método mágico `__DIR__` fornece o caminho absoluto do arquivo. 
+> 2. Ao importar algum arquivo com `require`/`require_once`, use o dunder method `__DIR__` para que não haja confusão com o import.
