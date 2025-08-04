@@ -218,3 +218,20 @@ $filme = [
 
 file_put_contents('filmes.json', json_encode($filme));
 ```
+
+## PHP + HTML
+Vamos usar o padrão `POST/REDIRECT/GET` em `exporta-arquivo.php`:
+```PHP
+// exporta-arquivo.php processa a requisição POST.
+<?php
+// Processamento da requisição POST.
+
+// Redireciona para a página de sucesso.
+header('Location: /sucesso.php?filme=' . $filme['nome']); 
+```
+
+E a tela de retorno será a `sucesso.php`:
+```PHP
+// sucesso.php
+<h1>Sucesso Filme <?php echo $_GET['filme'] ?> inserido</h1>
+```

@@ -8,3 +8,7 @@ $filme = [
 ];
 
 file_put_contents('filmes.json', json_encode($filme));
+
+// Redireciona para a página de sucesso.
+header('Location: /sucesso.php?filme=' . $filme['nome']); 
+
